@@ -1,9 +1,15 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Server.DbContexts;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<BlogDBContext>(opts => {
+    opts.UseSqlite("Data Source=./Data/BlogDB.db");
+});
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSwaggerGen(options => {
