@@ -182,7 +182,7 @@ orleans.codegen.cs
 *.db
 *.db-wal
 *.db-shm
-
+.vscode/
 /node_modules
 
 # RIA/Silverlight projects
