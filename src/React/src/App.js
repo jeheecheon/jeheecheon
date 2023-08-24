@@ -1,31 +1,22 @@
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 export default function Counter() {
-  const [number, setNumber] = useState(0);
+  let countRef = useRef(0);
+
 
   return (
-    <>
-      <h1>{number}</h1>
-      <button onClick={() => {
-        setNumber(n => {
-          alert(n);
-          return n + 1;
-        });
-        setNumber(n => {
-          alert(n)
-          return n + 1;
-        });
-        setNumber(n => {
-          alert(n)
-          return n + 1;
-        });
-        alert("triggered");
-      }}>+3</button>
-    </>
-  )
+    <button onClick={() => {
+      alert(countRef.current);
+      countRef.current += 1;
+      
+    }}>
+      Click me {countRef.current}
+    </button>
+  );
 }
 
-// import React, { Component } from 'react';
+
+// import React, { Component, useState } from 'react';
 // import { Route, Routes } from 'react-router-dom';
 // import AppRoutes from './AppRoutes';
 // import { Layout } from './components/Layout';
@@ -33,6 +24,10 @@ export default function Counter() {
 
 // export default class App extends Component {
 //   static displayName = App.name;
+
+//   myfunc() {
+//     const [index, setIndex] = useState(1);
+//   }
 
 //   render() {
 //     return (
