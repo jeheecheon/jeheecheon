@@ -4,7 +4,7 @@ namespace Domain.Models;
 
 public class Post {
     [Key]
-    public int PostID { get; set; }
+    public int PostId { get; set; }
 
     [Required]
     [MaxLength(100)]
