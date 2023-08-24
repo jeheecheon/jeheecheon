@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using DAL.Models;
+using Domain.Models;
 
-namespace DAL.DbContexts;
+namespace Infrastructure.Data;
 
 public class BlogDBContext : DbContext {
     public DbSet<Post>? Posts { get; set; }

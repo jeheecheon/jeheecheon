@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace DAL.Models;
+namespace Domain.Models;
 
 public class Post {
     [Key]
