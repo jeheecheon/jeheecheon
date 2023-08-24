@@ -5,11 +5,22 @@ using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Microsoft.VisualBasic;
 using Swashbuckle.AspNetCore.Filters;
+
+const string CORSPOLICY = "CORSPolicy";
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(options => {
+    options.AddPolicy(CORSPOLICY, builder => {
+        builder.AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithOrigins("http://localhost:3000");
+    });
+});
+
 builder.Services.AddDbContext<BlogDbContext>();
 builder.Services.AddScoped<IPostsRepository, PostsRepository>();
 
@@ -30,6 +41,8 @@ if (app.Environment.IsDevelopment()) {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
     });
 }
+
+app.UseCors(CORSPOLICY);
 
 app.UseStaticFiles();
 app.UseRouting();
