@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+using Domain.Models;
 using Domain.Repositories;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
@@ -32,14 +34,42 @@ if (app.Environment.IsDevelopment()) {
 app.UseStaticFiles();
 app.UseRouting();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
+app.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
 
 app.MapGet("/get-all-posts", async () => {
     var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
     return await repo.GetAllAsync();
-});
+})
+    .WithTags("Posts");
+
+app.MapGet("/get-post/{postId}", async (int postId) => {
+    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    var post = await repo.GetAsync(postId);
+    if (post is null) return Results.BadRequest();
+    else return Results.Ok(post);
+})
+    .WithTags("Posts");
+
+app.MapPost("/create-post/", async (Post postToCreate) => {
+    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    bool didSuccess = await repo.CreateAsync(postToCreate);
+    return didSuccess ? Results.Ok("Create Successful") : Results.BadRequest();
+})
+    .WithTags("Posts");
+
+app.MapPut("/update-post/", async (Post postToUpdate) => {
+    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    bool didSuccess = await repo.UpdateAsync(postToUpdate);
+    return didSuccess ? Results.Ok("Update Successful") : Results.BadRequest();
+})
+    .WithTags("Posts");
+
+app.MapDelete("/delete-post/{postId}", async (int postId) => {
+    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    bool didSuccess = await repo.DeleteAsync(postId);
+    return didSuccess ? Results.Ok("Delete Successful") : Results.BadRequest();
+})
+    .WithTags("Posts");
 
 app.MapFallbackToFile("index.html");
 
