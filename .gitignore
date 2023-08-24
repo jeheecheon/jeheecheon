@@ -179,6 +179,9 @@ ClientBin/
 *.pfx
 *.publishsettings
 orleans.codegen.cs
+*.db
+*.db-wal
+*.db-shm
 
 /node_modules
 
