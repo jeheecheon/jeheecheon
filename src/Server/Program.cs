@@ -13,6 +13,8 @@ const string CORSPOLICY = "CORSPolicy";
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<PostsRepository>();
+
 builder.Services.AddCors(options => {
     options.AddPolicy(CORSPOLICY, builder => {
         builder.AllowAnyHeader()
