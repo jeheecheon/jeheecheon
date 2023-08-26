@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import Constants from "./utilities/Constants";
+import PostCreateForm from "./components/PostCreateForm";
 
-type Post = {
-  postId: string;
+export interface Post {
+  postId: number;
   title: string;
   content: string;
 }
 
 export default function App() {
   const [posts, setPosts] = useState([]);
+  const [showingCreatedNewPostForm, setShowingCreatedNewPostForm] = useState(false);
+
   function getPosts() {
     const url = Constants.API_URL_GET_ALL_POSTS;
 
@@ -23,19 +26,26 @@ export default function App() {
         console.log(error);
         alert(error);
       });
-
   }
+
   return (
     <div className="center">
       <div className="row min-vh-100">
         <div className="col d-flex flex-column justify-content-center align-items-center ">
-          <h1>ASP.Net Server Test</h1>
+          {showingCreatedNewPostForm === false && (
+            <>
+              <h1>ASP.Net Server Test</h1>
 
-          <div className="mt-5">
-            <button onClick={getPosts} className="btn btn-dark btn-lg  w-100">Get Posts from server</button>
-            <button onClick={() => { }} className="btn btn-secondary btn-lg mt-4 w-100">Create New Post</button>
-          </div>
-          {posts.length > 0 && renderPostsTable()}
+              <div className="mt-5">
+                <button onClick={getPosts} className="btn btn-dark btn-lg  w-100">Get Posts from server</button>
+                <button onClick={() => setShowingCreatedNewPostForm(true)} className="btn btn-secondary btn-lg mt-4 w-100">Create New Post</button>
+              </div>
+            </>
+          )}
+
+
+          {(posts.length > 0 && !showingCreatedNewPostForm) && renderPostsTable()}
+          {showingCreatedNewPostForm && (<PostCreateForm onPostCreated={onPostCreated} />) }
         </div>
       </div>
     </div>
@@ -72,5 +82,15 @@ export default function App() {
         </div>
       </>
     )
+  }
+
+  function onPostCreated(createdPost: Post | null) {
+    setShowingCreatedNewPostForm(false);
+    // Do nothing if it's null
+    if (createdPost === null) return;
+
+    alert(`Post successfully created. After clicking OK, your new post titled "${createdPost.title}" whill show up in the table below`);
+
+    getPosts();
   }
 }
