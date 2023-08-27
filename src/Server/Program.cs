@@ -8,16 +8,18 @@ using Microsoft.OpenApi.Models;
 using Microsoft.VisualBasic;
 using Swashbuckle.AspNetCore.Filters;
 
-const string CORSPOLICY = "CORSPolicy";
 
 var builder = WebApplication.CreateBuilder(args);
 
+var reactClientCORSPolicy = "ReactClientCORSPolicy";
+var reactClientUrl = builder.Environment.IsDevelopment() ? "http://localhost:44495" : "client url";
+
 // Add services to the container.
 builder.Services.AddCors(options => {
-    options.AddPolicy(CORSPOLICY, builder => {
+    options.AddPolicy(reactClientCORSPolicy, builder => {
         builder.AllowAnyHeader()
             .AllowAnyMethod()
-            .WithOrigins("http://localhost:44495");
+            .WithOrigins(reactClientUrl);
     });
 });
 
@@ -42,7 +44,7 @@ if (app.Environment.IsDevelopment()) {
     });
 }
 
-app.UseCors(CORSPOLICY);
+app.UseCors(reactClientCORSPolicy);
 
 app.UseStaticFiles();
 app.UseRouting();
