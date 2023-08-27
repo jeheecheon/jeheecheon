@@ -21,14 +21,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ContentWithTargetPath Include="../Infrastructure/Data/BlogDb.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>.\Data\BlogDb.db</TargetPath>
+    </ContentWithTargetPath>
+    <ContentWithTargetPath Include="../Infrastructure/Data/BlogDb.db-shm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>.\Data\BlogDb.db-shm</TargetPath>
+    </ContentWithTargetPath>
+    <ContentWithTargetPath Include="../Infrastructure/Data/BlogDb.db-wal">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>.\Data\BlogDb.db-wal</TargetPath>
+    </ContentWithTargetPath>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)' == 'Development' ">
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
