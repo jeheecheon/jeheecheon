@@ -3,10 +3,17 @@ using Domain.Models;
 using Domain.Repositories;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.Repositories;
 
 public class PostsRepository : IPostsRepository {
+    private readonly ILogger _logger;
+    
+    public PostsRepository(ILogger<PostsRepository> logger) {
+        _logger = logger;
+    }
+
     public async Task<List<Post>?> GetAllAsync() {
         using var db = new BlogDbContext();
         return await db.Posts!.ToListAsync();
@@ -24,6 +31,7 @@ public class PostsRepository : IPostsRepository {
             return await db.SaveChangesAsync() >= 1;
         }
         catch (Exception e) {
+            _logger.LogError($"{e.Source}: {e.Message}");
             return false;
         }
     }
@@ -35,6 +43,7 @@ public class PostsRepository : IPostsRepository {
             return await db.SaveChangesAsync() >= 1;
         }
         catch (Exception e) {
+            _logger.LogError($"{e.Source}: {e.Message}");
             return false;
         }
     }
@@ -50,6 +59,7 @@ public class PostsRepository : IPostsRepository {
             return await db.SaveChangesAsync() >= 1;
         }
         catch (Exception e) {
+            _logger.LogError($"{e.Source}: {e.Message}");
             return false;
         }
     }

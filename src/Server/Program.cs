@@ -5,11 +5,22 @@ using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Microsoft.VisualBasic;
 using Swashbuckle.AspNetCore.Filters;
+
+const string CORSPOLICY = "CORSPolicy";
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(options => {
+    options.AddPolicy(CORSPOLICY, builder => {
+        builder.AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithOrigins("http://localhost:44495");
+    });
+});
+
 builder.Services.AddDbContext<BlogDbContext>();
 builder.Services.AddScoped<IPostsRepository, PostsRepository>();
 
@@ -31,19 +42,23 @@ if (app.Environment.IsDevelopment()) {
     });
 }
 
+app.UseCors(CORSPOLICY);
+
 app.UseStaticFiles();
 app.UseRouting();
 
 app.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
 
 app.MapGet("/get-all-posts", async () => {
-    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    using var scope = app.Services.CreateScope();
+    var repo = scope.ServiceProvider.GetRequiredService<IPostsRepository>();
     return await repo.GetAllAsync();
 })
     .WithTags("Posts");
 
 app.MapGet("/get-post/{postId}", async (int postId) => {
-    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    using var scope = app.Services.CreateScope();
+    var repo = scope.ServiceProvider.GetRequiredService<IPostsRepository>();
     var post = await repo.GetAsync(postId);
     if (post is null) return Results.BadRequest();
     else return Results.Ok(post);
@@ -51,21 +66,24 @@ app.MapGet("/get-post/{postId}", async (int postId) => {
     .WithTags("Posts");
 
 app.MapPost("/create-post/", async (Post postToCreate) => {
-    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    using var scope = app.Services.CreateScope();
+    var repo = scope.ServiceProvider.GetRequiredService<IPostsRepository>();
     bool didSuccess = await repo.CreateAsync(postToCreate);
     return didSuccess ? Results.Ok("Create Successful") : Results.BadRequest();
 })
     .WithTags("Posts");
 
 app.MapPut("/update-post/", async (Post postToUpdate) => {
-    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    using var scope = app.Services.CreateScope();
+    var repo = scope.ServiceProvider.GetRequiredService<IPostsRepository>();
     bool didSuccess = await repo.UpdateAsync(postToUpdate);
     return didSuccess ? Results.Ok("Update Successful") : Results.BadRequest();
 })
     .WithTags("Posts");
 
 app.MapDelete("/delete-post/{postId}", async (int postId) => {
-    var repo = ActivatorUtilities.GetServiceOrCreateInstance<PostsRepository>(app.Services);
+    using var scope = app.Services.CreateScope();
+    var repo = scope.ServiceProvider.GetRequiredService<IPostsRepository>();
     bool didSuccess = await repo.DeleteAsync(postId);
     return didSuccess ? Results.Ok("Delete Successful") : Results.BadRequest();
 })
