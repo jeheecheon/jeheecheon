@@ -8,11 +8,11 @@ using Microsoft.OpenApi.Models;
 using Microsoft.VisualBasic;
 using Swashbuckle.AspNetCore.Filters;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
-var reactClientCORSPolicy = "ReactClientCORSPolicy";
-var reactClientUrl = builder.Environment.IsDevelopment() ? "http://localhost:44495" : "https://black-bush-0a3774c00.3.azurestaticapps.net";
+string reactClientCORSPolicy = builder.Configuration["CORSPolicies:ReactClient"]!;
+string reactClientUrl = builder.Configuration["ClientUrls:ReactUrl"]!;
+string blogDbConnectionString = builder.Configuration.GetConnectionString("BlogDbConnectionString")!;
 
 // Add services to the container.
 builder.Services.AddCors(options => {
@@ -23,7 +23,10 @@ builder.Services.AddCors(options => {
     });
 });
 
-builder.Services.AddDbContext<BlogDbContext>();
+builder.Services.AddDbContext<BlogDbContext>(options => {
+    options.UseSqlite(blogDbConnectionString);
+});
+
 builder.Services.AddScoped<IPostsRepository, PostsRepository>();
 
 builder.Services.AddControllersWithViews();
@@ -35,6 +38,8 @@ builder.Services.AddSwaggerGen(options => {
 });
 
 var app = builder.Build();
+
+app.UseHttpsRedirection();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment()) {

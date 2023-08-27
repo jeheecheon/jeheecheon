@@ -1,5 +1,5 @@
-const API_BASE_URL_DEVELOPMENT = 'http://localhost:5215';
-const API_BASE_URL_RPODUCTION = 'jeheecheon.azurewebsites.net';
+const API_BASE_URL_DEVELOPMENT = 'https://localhost:7155';
+const API_BASE_URL_RPODUCTION = 'https://jeheecheon.azurewebsites.net';
 
 const ENDPOINTS = {
   GET_ALL_POSTS: 'get-all-posts',

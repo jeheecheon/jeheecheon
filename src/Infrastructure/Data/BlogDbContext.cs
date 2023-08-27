@@ -12,8 +12,6 @@ public class BlogDbContext : DbContext {
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
         base.OnConfiguring(optionsBuilder);
-
-        optionsBuilder.UseSqlite("Data Source=../Infrastructure/Data/BlogDB.db");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
