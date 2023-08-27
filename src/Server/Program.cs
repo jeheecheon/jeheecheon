@@ -12,7 +12,7 @@ using Swashbuckle.AspNetCore.Filters;
 var builder = WebApplication.CreateBuilder(args);
 
 var reactClientCORSPolicy = "ReactClientCORSPolicy";
-var reactClientUrl = builder.Environment.IsDevelopment() ? "http://localhost:44495" : "client url";
+var reactClientUrl = builder.Environment.IsDevelopment() ? "http://localhost:44495" : "https://black-bush-0a3774c00.3.azurestaticapps.net";
 
 // Add services to the container.
 builder.Services.AddCors(options => {
