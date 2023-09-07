@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react'
-import Constants from '../utilities/Constants'
-import { Post } from '../App';
+import Constants from '../utils/Constants'
+import { Post } from '../App2';
 
 interface Props {
   onPostUpdated: (createdPost: Post | null) => void;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function PostUpdateForm({ onPostUpdated, post }: Props) {
-  const initialFormData = Object.freeze({...post});
+  const initialFormData = Object.freeze({ ...post });
   const [formData, setFormData] = useState(initialFormData);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +21,7 @@ export default function PostUpdateForm({ onPostUpdated, post }: Props) {
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
-    const postToUpdate: Post = {...formData};
+    const postToUpdate: Post = { ...formData };
 
     const url = Constants.API_URL_UPDATE_POST;
 
