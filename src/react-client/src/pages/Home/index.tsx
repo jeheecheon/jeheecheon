@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Constants from "./utils/Constants";
-import PostCreateForm from "./components/PostCreateForm";
-import PostUpdateForm from "./components/PostUpdateForm";
+import Constants from "../../utils/Constants";
+import PostCreateForm from "../../components/PostCreateForm";
+import PostUpdateForm from "../../components/PostUpdateForm";
+
 
 export interface Post {
   postId: number;
@@ -9,7 +10,7 @@ export interface Post {
   content: string;
 }
 
-export default function App2() {
+export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [showingCreatedNewPostForm, setShowingCreatedNewPostForm] = useState(false);
   const [postCurrentlyBeingUpdated, setPostCurrentlyBeingUpdated] = useState<Post | null>(null);

@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react'
 import Constants from '../utils/Constants'
-import { Post } from '../App2';
+import { Post } from '../pages/Home';
 
 interface Props {
   onPostCreated: (createdPost: Post | null) => void;
