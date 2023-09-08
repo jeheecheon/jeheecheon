@@ -1,11 +1,11 @@
 import NavBar from './NavBar';
 import Footer from './Footer';
 import { Container } from 'react-bootstrap';
-import { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
+import IPageProps from '../../interfaces/page';
 
 
-export default function MainLayout() {
+const BlogLayout: React.FunctionComponent<IPageProps> = _ => {
   return (
     <>
       <Container fluid className='m-0 p-0'>
@@ -22,3 +22,5 @@ export default function MainLayout() {
     </>
   );
 }
+
+export default BlogLayout;

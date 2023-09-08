@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import MainLayout from "./layouts/Main/MainLayout";
+import MainLayout from "./layouts/Blog/BlogLayout";
 import AppRoutes from "./utils/AppRoutes";
+import IPageProps from "./interfaces/page";
 
-export default function App() {
+const Application: React.FunctionComponent<IPageProps> = props => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
@@ -14,3 +15,5 @@ export default function App() {
     </Routes>
   );
 }
+
+export default Application;

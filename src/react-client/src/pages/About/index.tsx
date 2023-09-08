@@ -1,4 +1,6 @@
-export default function About() {
+import IPageProps from "../../interfaces/page";
+
+const About: React.FunctionComponent<IPageProps> = () => {
   return (
     <>
       <h1>
@@ -7,3 +9,5 @@ export default function About() {
     </>
   );
 }
+
+export default About;

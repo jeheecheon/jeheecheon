@@ -1,13 +1,13 @@
 import React, { useState, ChangeEvent } from 'react'
-import Constants from '../utils/Constants'
-import { Post } from '../pages/Home';
+import Constants from '../configs/ApiEndpoints'
+import { Post } from '../pages/Demo';
 
 interface Props {
   onPostUpdated: (createdPost: Post | null) => void;
   post: Post
 }
 
-export default function PostUpdateForm({ onPostUpdated, post }: Props) {
+const PostUpdateForm: React.FunctionComponent<Props> = ({ onPostUpdated, post }) => {
   const initialFormData = Object.freeze({ ...post });
   const [formData, setFormData] = useState(initialFormData);
 
@@ -64,3 +64,4 @@ export default function PostUpdateForm({ onPostUpdated, post }: Props) {
   );
 }
 
+export default PostUpdateForm;

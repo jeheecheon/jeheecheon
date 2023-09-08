@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Constants from "../../utils/Constants";
+import Constants from "../../configs/ApiEndpoints";
 import PostCreateForm from "../../components/PostCreateForm";
 import PostUpdateForm from "../../components/PostUpdateForm";
+import IPageProps from "../../interfaces/page";
 
 
 export interface Post {
@@ -10,7 +11,7 @@ export interface Post {
   content: string;
 }
 
-export default function Home() {
+const Demo: React.FunctionComponent<IPageProps> = props => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [showingCreatedNewPostForm, setShowingCreatedNewPostForm] = useState(false);
   const [postCurrentlyBeingUpdated, setPostCurrentlyBeingUpdated] = useState<Post | null>(null);
@@ -150,3 +151,5 @@ export default function Home() {
     alert('Post successfuly deleted. After clicking OK, look at the table below toe see your post disappear.');
   }
 }
+
+export default Demo;

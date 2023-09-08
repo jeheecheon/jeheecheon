@@ -1,7 +1,8 @@
 import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import IPageProps from "../../interfaces/page";
 
-export default function NavBar() {
+const NavBar: React.FunctionComponent<IPageProps> = () => {
   return (
     <Navbar expand='md' className="bg-dark-subtle m-0">
       <Container fluid>
@@ -51,3 +52,4 @@ export default function NavBar() {
   );
 }
 
+export default NavBar;
