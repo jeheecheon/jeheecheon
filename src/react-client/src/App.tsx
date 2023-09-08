@@ -1,13 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import MainLayout from "./layouts/MainLayout";
-import Home from "./pages/Home";
+import MainLayout from "./layouts/Blog/BlogLayout";
+import AppRoutes from "./utils/AppRoutes";
+import IPageProps from "./interfaces/page";
 
-export default function App() {
+const Application: React.FunctionComponent<IPageProps> = props => {
   return (
-    <MainLayout>
-      <Routes>
-        <Route path="/" element={<Home />}/>
-      </Routes>
-    </MainLayout>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        {AppRoutes.map((route, idx) => {
+          const { element, ...rest } = route;
+          return <Route key={idx} {...rest} element={element} />;
+        })}
+      </Route>
+    </Routes>
   );
 }
+
+export default Application;

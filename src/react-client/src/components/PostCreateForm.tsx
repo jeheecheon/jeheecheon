@@ -1,12 +1,12 @@
 import React, { useState, ChangeEvent } from 'react'
-import Constants from '../utils/Constants'
-import { Post } from '../pages/Home';
+import Constants from '../configs/api-urls'
+import { Post } from '../pages/Demo';
 
 interface Props {
   onPostCreated: (createdPost: Post | null) => void;
 }
 
-export default function PostCreateForm({ onPostCreated }: Props) {
+const PostCreateForm: React.FunctionComponent<Props> = ({ onPostCreated }) => {
   const initialFormData = Object.freeze({
     title: "Post x",
     content: "This is post x and it has some very interesting content"
@@ -70,3 +70,4 @@ export default function PostCreateForm({ onPostCreated }: Props) {
   );
 }
 
+export default PostCreateForm;

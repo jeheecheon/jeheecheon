@@ -1,6 +1,7 @@
-import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas } from "react-bootstrap";
+import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import IPageProps from "../../interfaces/page";
 
-export default function Footer() {
+const Footer: React.FunctionComponent<IPageProps> = () => {
   return (
     <Navbar expand='md' className="bg-dark-subtle m-0">
       <Container fluid>
@@ -29,3 +30,4 @@ export default function Footer() {
   );
 }
 
+export default Footer;

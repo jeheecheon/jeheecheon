@@ -1,10 +1,12 @@
 import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import IPageProps from "../../interfaces/page";
 
-export default function NavBar() {
+const NavBar: React.FunctionComponent<IPageProps> = () => {
   return (
     <Navbar expand='md' className="bg-dark-subtle m-0">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Navbar Offcanvas</Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
         <Navbar.Offcanvas
           id={`offcanvasNavbar-expand-md`}
@@ -18,8 +20,8 @@ export default function NavBar() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/posts">Posts</Nav.Link>
               <NavDropdown
                 title="Dropdown"
                 id={`offcanvasNavbarDropdown-expand-md`}
@@ -50,3 +52,4 @@ export default function NavBar() {
   );
 }
 
+export default NavBar;
