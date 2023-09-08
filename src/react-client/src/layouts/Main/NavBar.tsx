@@ -1,10 +1,11 @@
 import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
     <Navbar expand='md' className="bg-dark-subtle m-0">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Navbar Offcanvas</Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
         <Navbar.Offcanvas
           id={`offcanvasNavbar-expand-md`}

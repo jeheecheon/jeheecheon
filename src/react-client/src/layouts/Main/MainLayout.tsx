@@ -2,9 +2,10 @@ import NavBar from './NavBar';
 import Footer from './Footer';
 import { Container } from 'react-bootstrap';
 import { ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
 
 
-export default function MainLayout({children}: {children: ReactNode}) {
+export default function MainLayout() {
   return (
     <>
       <Container fluid className='m-0 p-0'>
@@ -12,7 +13,7 @@ export default function MainLayout({children}: {children: ReactNode}) {
 
         <div className='min-vh-100'>
           <Container fluid="md">
-            {children}
+            <Outlet />
           </Container>
         </div>
 
