@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootswatch/dist/flatly/bootstrap.css';
 import 'normalize.css';
 
 import React from 'react';
