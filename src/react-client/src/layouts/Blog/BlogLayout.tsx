@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 import IPageProps from '../../interfaces/page';
 
 
-const BlogLayout: React.FunctionComponent<IPageProps> = _ => {
+const BlogLayout: React.FunctionComponent<IPageProps> = () => {
   return (
     <>
       <Container fluid className='m-0 p-0'>

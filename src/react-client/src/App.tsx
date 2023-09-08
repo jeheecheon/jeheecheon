@@ -7,9 +7,9 @@ const Application: React.FunctionComponent<IPageProps> = props => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        {AppRoutes.map((route, index) => {
+        {AppRoutes.map((route, idx) => {
           const { element, ...rest } = route;
-          return <Route key={index} {...rest} element={element} />;
+          return <Route key={idx} {...rest} element={element} />;
         })}
       </Route>
     </Routes>

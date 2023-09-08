@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Constants from "../../configs/ApiEndpoints";
 import PostCreateForm from "../../components/PostCreateForm";
 import PostUpdateForm from "../../components/PostUpdateForm";
 import IPageProps from "../../interfaces/page";
+import API_URLS from "../../configs/api-urls";
 
 
 export interface Post {
@@ -17,7 +17,7 @@ const Demo: React.FunctionComponent<IPageProps> = props => {
   const [postCurrentlyBeingUpdated, setPostCurrentlyBeingUpdated] = useState<Post | null>(null);
 
   function getPosts() {
-    const url = Constants.API_URL_GET_ALL_POSTS;
+    const url = API_URLS.API_URL_GET_ALL_POSTS;
 
     fetch(url, {
       method: 'GET'
@@ -33,7 +33,7 @@ const Demo: React.FunctionComponent<IPageProps> = props => {
   }
 
   function deletePost(postId: number) {
-    const url = `${Constants.API_URL_DELETE_POST}/${postId}`;
+    const url = `${API_URLS.API_URL_DELETE_POST}/${postId}`;
 
     fetch(url, {
       method: 'DELETE'

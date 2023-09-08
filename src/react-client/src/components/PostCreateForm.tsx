@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react'
-import Constants from '../configs/ApiEndpoints'
+import Constants from '../configs/api-urls'
 import { Post } from '../pages/Demo';
 
 interface Props {

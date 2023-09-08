@@ -25,6 +25,6 @@ const production = {
   API_URL_DELETE_POST: `${API_BASE_URL_RPODUCTION}/${ENDPOINTS.DELETE_POST}`
 };
 
-const Constants = process.env.NODE_ENV === 'development' ? development : production;
+const API_URLS = process.env.NODE_ENV === 'development' ? development : production;
 
-export default Constants;
+export default API_URLS;

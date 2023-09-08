@@ -26,15 +26,15 @@
 
   <ItemGroup Condition=" '$(Configuration)' == 'Release' ">
     <ContentWithTargetPath Include="../Infrastructure/Data/BlogDb.db">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>.\Data\BlogDb.db</TargetPath>
     </ContentWithTargetPath>
     <ContentWithTargetPath Include="../Infrastructure/Data/BlogDb.db-shm">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>.\Data\BlogDb.db-shm</TargetPath>
     </ContentWithTargetPath>
     <ContentWithTargetPath Include="../Infrastructure/Data/BlogDb.db-wal">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>.\Data\BlogDb.db-wal</TargetPath>
     </ContentWithTargetPath>
   </ItemGroup>

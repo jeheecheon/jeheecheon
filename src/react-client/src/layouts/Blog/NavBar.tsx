@@ -20,8 +20,8 @@ const NavBar: React.FunctionComponent<IPageProps> = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/posts">Posts</Nav.Link>
               <NavDropdown
                 title="Dropdown"
                 id={`offcanvasNavbarDropdown-expand-md`}
