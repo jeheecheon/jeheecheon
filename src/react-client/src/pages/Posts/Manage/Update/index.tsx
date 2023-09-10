@@ -3,8 +3,8 @@ import { IPost } from "../../../../interfaces/post";
 import { useEffect, useState } from "react";
 import API_URLS from "../../../../configs/api-urls";
 
-const UpdatePost = () => {
-  const { postId } = useParams()
+export default function UpdatePost() {
+  const { postId } = useParams<string>()
   const [post, setPost] = useState<IPost | null>(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const UpdatePost = () => {
   }, []);
 
   async function getPost() {
-    const url = API_URLS.API_URL_GET_POST + "/" + postId;
+    const url = `${API_URLS.API_URL_GET_POST}/${postId}`;
     await fetch(url, {
       method: 'GET'
     })
@@ -41,7 +41,13 @@ const UpdatePost = () => {
         </div>
 
         <button onClick={handleSubmit} className='btn btn-dark btn-lg w-100 mt-5'>Submit</button>
-        <button onClick={() => { }} className='btn btn-secondary btn-lg w-100 mt-3'>Cancel</button>
+        <button onClick={(e) => {
+          e.preventDefault();
+          window.location.href = '/';
+        }}
+          className='btn btn-secondary btn-lg w-100 mt-3'>
+          Cancel
+        </button>
 
       </form>
     </>
@@ -55,7 +61,8 @@ const UpdatePost = () => {
       });
   }
 
-  async function handleSubmit() {
+  async function handleSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.preventDefault();
     const url = API_URLS.API_URL_UPDATE_POST;
 
     await fetch(url, {
@@ -77,5 +84,3 @@ const UpdatePost = () => {
     window.location.href = '/';
   }
 }
-
-export default UpdatePost;

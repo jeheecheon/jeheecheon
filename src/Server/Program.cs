@@ -3,6 +3,7 @@ using Domain.Models;
 using Domain.Repositories;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.VisualBasic;
@@ -76,7 +77,7 @@ app.MapPost("/create-post/", async (Post postToCreate) => {
     using var scope = app.Services.CreateScope();
     var repo = scope.ServiceProvider.GetRequiredService<IPostsRepository>();
     bool didSuccess = await repo.CreateAsync(postToCreate);
-    return didSuccess ? Results.Ok("Create Successful") : Results.BadRequest();
+    return didSuccess ? Results.Ok("Created") : Results.BadRequest();
 })
     .WithTags("Posts");
 
@@ -84,7 +85,7 @@ app.MapPut("/update-post/", async (Post postToUpdate) => {
     using var scope = app.Services.CreateScope();
     var repo = scope.ServiceProvider.GetRequiredService<IPostsRepository>();
     bool didSuccess = await repo.UpdateAsync(postToUpdate);
-    return didSuccess ? Results.Ok("Update Successful") : Results.BadRequest();
+    return didSuccess ? Results.Ok("Updated") : Results.BadRequest();
 })
     .WithTags("Posts");
 
@@ -92,7 +93,7 @@ app.MapDelete("/delete-post/{postId}", async (int postId) => {
     using var scope = app.Services.CreateScope();
     var repo = scope.ServiceProvider.GetRequiredService<IPostsRepository>();
     bool didSuccess = await repo.DeleteAsync(postId);
-    return didSuccess ? Results.Ok("Delete Successful") : Results.BadRequest();
+    return didSuccess ? Results.Ok("Deleted") : Results.BadRequest();
 })
     .WithTags("Posts");
 

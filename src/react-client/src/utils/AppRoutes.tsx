@@ -13,19 +13,19 @@ const AppRoutes = [
     element: <Home />
   },
   {
-    path: '/Demo',
+    path: '/demo',
     element: <Demo />
   },
   {
-    path: '/Posts',
+    path: '/posts',
     element: <Posts />
   },
   {
-    path: '/Posts/Create',
+    path: '/posts/manage/create',
     element: <CreatePost />
   },
   {
-    path: '/Posts/Update/:postId',
+    path: '/posts/manage/update/:postId',
     element: <UpdatePost />
   },
   {
