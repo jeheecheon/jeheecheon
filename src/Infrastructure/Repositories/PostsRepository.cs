@@ -55,7 +55,8 @@ public class PostsRepository : IPostsRepository {
     public async Task<bool> DeleteAsync(int postId) {
         using var db = _serviceProvider.GetRequiredService<BlogDbContext>();
         try {
-            var postToDelete = await GetAsync(postId);
+            // Get the post to delete
+            var postToDelete = await db.Posts!.FirstOrDefaultAsync(post => post.PostId == postId);
             if (postToDelete is null)
                 return false;
 
