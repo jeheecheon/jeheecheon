@@ -14,7 +14,7 @@
   </a> -->
   <pre>
     Languages I don't use often : 
-    <em>C, C++, Python</em>
+    <em>C, Python</em>
   </pre>
   <div align=right>
     <a href="https://hits.seeyoufarm.com">
@@ -27,28 +27,3 @@
     Hi there~ 👍
   </h1>
 </div>
-
-*My Blog* : [Click ME!!](https://black-bush-0a3774c00.3.azurestaticapps.net/) 🔥⚡  
-*GIthub Repository* : [Click ME!!](https://github.com/jeheecheon/jeheecheon) 🔥⚡  
-Building whith 
-- ![Static Badge](https://img.shields.io/badge/React-61DAFB?logo=React&logoColor=black&style=flat-square) as the client-side
-- ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?logo=.net&logoColor=white&style=flat-square) for the back-end API.
-- ![sqlite](https://img.shields.io/badge/Sqlite-003B57?logo=sqlite&logoColor=white&style=flat-square) Sqlite for the database.
-
-Additianly, utilizing the EF Core to the maximum🔥 to make the development process more efficient!  
-A bit long way to go yet tho 😒
-<div align=center>
-  🐌,,🐌,,,,,,,🐌,,,,,,,,,,,,,,,,,,,,,🐎(me),,,,
-</div>
-<br />
-
-*This [Blog](https://jeheecheon.github.io/) built with Jekyll is ***abandoned***. Not publishing any more there. The idea of having to write posts in markdown synyax is too bothersome!!*  
-[Click here](https://black-bush-0a3774c00.3.azurestaticapps.net/) to go to the repository
-#
-### 2023-08-28  
-I've just deployed a simple webpage to Azure, built with React on the client-side and utilizing ASP.NET Core for the back-end API. I think I've grasped the basics of how the web works so the rest should be less difficult to tackle!!  
-Along the way in the last 4 months, I've touched also Blazor, ASP.Net Core Mvc and Razor pages. Very excited to see that these great skills are now mine to use!😊  
-<details>
-  <summary>2023-04-01</summary>
-  I’m currently learning ASP.NET Core MVC and Razor Pages. On a path to become a back-end developer. I will test some learning stuff on [this repo](https://github.com/jeheecheon/jeheecheon) at first and will turn it into my personal blog where I can post things in public. Plans could change but, hopefully I will learn a lot along the way 😄
-</details>
