@@ -23,7 +23,5 @@
   </div>
 </div>
 <div align=center>
-  <h1>
-    Hi there~ 👍
-  </h1>
+  <h3>개인 웹사이트: <a href="https://www.jeheecheon.com">https://www.jeheecheon.com</a></h3>
 </div>
