@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/badge/React-61DAFB?logo=React&logoColor=black&style=for-the-badge" alt="React">
   <img src="https://img.shields.io/badge/Blazor-512BD4?logo=Blazor&logoColor=white&style=for-the-badge" alt="Blazor">
   <img src="https://img.shields.io/badge/ASP.NET_Core-512BD4?logo=.net&logoColor=white&style=for-the-badge" alt="ASP.NET Core">
-  <img src="https://img.shields.io/badge/Jekyll-CC0000?logo=Jekyll&logoColor=black&style=for-the-badge" alt="Jekyll">
+<!--   <img src="https://img.shields.io/badge/Jekyll-CC0000?logo=Jekyll&logoColor=black&style=for-the-badge" alt="Jekyll"> -->
   <h3>Fluent with:</h3>
   <img src="https://img.shields.io/badge/C_Sharp👍-239120?logo=csharp&logoColor=white&style=flat-square" alt="C#">
   <img src="https://img.shields.io/badge/typescript-3178C6?logo=typescript&logoColor=black&style=flat-square" alt="TypeScript">
@@ -12,10 +12,10 @@
 <!--   <a href="https://github.com/jeheecheon">
     <img src="https://github-readme-stats.vercel.app/api?username=jeheecheon" alt="My GitHub stats">
   </a> -->
-  <pre>
+<!--   <pre>
     Languages I don't use often : 
     <em>C, Python</em>
-  </pre>
+  </pre> -->
   <div align=right>
     <a href="https://hits.seeyoufarm.com">
       <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjeheecheon%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=smugmug.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
