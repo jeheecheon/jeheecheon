@@ -1,9 +1,0 @@
-.stage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 32px 0;
-  margin: 0 -5%;
-  overflow: hidden;
-}
