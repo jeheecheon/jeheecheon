@@ -24,10 +24,10 @@
 </div>
 <div align=center>
   <h1>
-    안녕하세요. 프론트엔드 개발자 천제희입니다.
+    FE Dev. Jehee Cheon.
   </h1>
   <h3>
-    블로그: 
+    Blog: 
     <a 
       href="https://blog.jeheecheon.com"
       target="_blank"
@@ -37,7 +37,7 @@
     </a>
   </h3>
   <h3>
-    이력서: 
+    Resume: 
     <a 
       href="https://resume.jeheecheon.com"
       target="_blank"
@@ -49,9 +49,9 @@
   <br />
   <br />
   <br />
-  프로젝트 / 활동 내역은 아래에서 확인할 수 있습니다.
+  최근 활동내역과 프로젝트는 아래 링크에서 확인할 수 있습니다.
   <h3>
-    프로젝트 카테고리: 
+    Projects Category: 
     <a 
       href="https://blog.jeheecheon.com/categories/Projects"
       target="_blank"
