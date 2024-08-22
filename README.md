@@ -23,9 +23,11 @@
   </div>
 </div>
 <div align=center>
-  안녕하세요. 프론트엔드 개발자 천제희입니다.
+  <h1>
+    안녕하세요. 프론트엔드 개발자 천제희입니다.
+  </h1>
   <h3>
-    개인 블로그: 
+    블로그: 
     <a 
       href="https://blog.jeheecheon.com"
       target="_blank"
@@ -45,7 +47,7 @@
     </a>
   </h3>
   <br />
-  <hr />
+  <br />
   <br />
   프로젝트 / 활동 내역은 아래에서 확인할 수 있습니다.
   <h3>
