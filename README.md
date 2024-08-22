@@ -51,11 +51,11 @@
   <h3>
     프로젝트 카테고리: 
     <a 
-      href="https://resume.jeheecheon.com"
+      href="https://blog.jeheecheon.com/categories/Projects"
       target="_blank"
       rel="noreferrer"
     >
-      https://resume.jeheecheon.com/categories/Projects
+      https://blog.jeheecheon.com/categories/Projects
     </a>
   </h3>
 </div>
