@@ -22,10 +22,14 @@
     </a>
   </div>
 </div>
+
 <div align=center>
   <h1>
-    FE Dev. Jehee Cheon.
+    FE Dev. <i>Jehee Cheon.</i>
   </h1>
+  
+  <br/>
+
   <h3>
     Blog: 
     <a 
@@ -36,6 +40,7 @@
       https://blog.jeheecheon.com
     </a>
   </h3>
+  
   <h3>
     Resume: 
     <a 
@@ -46,10 +51,14 @@
       https://resume.jeheecheon.com
     </a>
   </h3>
+  
   <br />
   <br />
-  최근 활동내역과 프로젝트는 아래 링크에서 확인할 수 있습니다.
-  <h3>
+  
+  <h5>
+    활동내역과 프로젝트는 아래에 있습니다.
+    <br />
+    <br />
     Projects Category: 
     <a 
       href="https://blog.jeheecheon.com/categories/Projects"
@@ -58,7 +67,11 @@
     >
       https://blog.jeheecheon.com/categories/Projects
     </a>
-  </h3>
+  </h5>
+  
+  <br/>
+  
+  <h1></h1>
   
   <br/>
 
@@ -68,16 +81,16 @@
   <a href="https://solved.ac/jeheecheon" target="_blank">
     <img src="http://mazassumnida.wtf/api/generate_badge?boj=jeheecheon" alt="Solved.ac 부계정">
   </a>
+  
   <br/>
 
   <!-- 
   <img src="https://github-readme-stats.vercel.app/api?username=jeheecheon&show_icons=true&theme=dark" alt="GitHub Stats">
   -->
   본계정 / 부계정
-  <br/>
-  <br/>
-  천천히...천천히...천제히
+  <h6>천천히...천천히...천제히</h6>
 </div>
+
 <!-- 
   ![github state](https://github-readme-stats.vercel.app/api?username=jeheecheon&show_icons=true&theme=dark)
   [![Solved.ac 본계정](http://mazassumnida.wtf/api/generate_badge?boj=jeheecheom)](https://solved.ac/jeheecheom)
