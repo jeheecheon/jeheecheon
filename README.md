@@ -15,13 +15,14 @@
 <!--   <pre>
     Languages I don't use often : 
     <em>C, Python</em>
-  </pre> -->
+  </pre> 
   <div align=right>
     <a href="https://hits.seeyoufarm.com">
       <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjeheecheon%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=smugmug.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits">
     </a>
   </div>
 </div>
+  -->
 
 <div align=center>
   <h1>
@@ -30,6 +31,7 @@
   
   <br/>
 
+<!--
   <h3>
     Blog: 
     <a 
@@ -69,9 +71,11 @@
     </a>
   </h5>
   
+  
   <br/>
   
   <h1></h1>
+-->
   
   <br/>
 
