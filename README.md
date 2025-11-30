@@ -79,12 +79,14 @@
   
   <br/>
 
+<!--
   <a href="https://solved.ac/jeheecheom" target="_blank">
     <img src="http://mazassumnida.wtf/api/generate_badge?boj=jeheecheom" alt="Solved.ac 본계정">
   </a>
   <a href="https://solved.ac/jeheecheon" target="_blank">
     <img src="http://mazassumnida.wtf/api/generate_badge?boj=jeheecheon" alt="Solved.ac 부계정">
   </a>
+  -->
   
   <br/>
 
